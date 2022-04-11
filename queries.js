@@ -1,8 +1,5 @@
 const { Business, Address, Employee } = require('./models')
 
-function stringify(data) {
-  console.log(JSON.stringify(data, null, 4))
-}
 
 const getAllBusinesses = async () => {
   try {
@@ -47,7 +44,6 @@ const getBusinessAddressAndEmployee = async () => {
         { model: Employee }
       ]
     })
-    stringify(getAddressEmployees)
     return getAddressEmployees
   } catch (error) {
     console.log(error)
