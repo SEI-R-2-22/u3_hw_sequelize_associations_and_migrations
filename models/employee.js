@@ -1,4 +1,5 @@
 'use strict'
+const { randAddress } = require('@ngneat/falso')
 const { Model } = require('sequelize')
 module.exports = (sequelize, DataTypes) => {
   class Employee extends Model {
@@ -9,6 +10,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Employee.belongsTo(models.Business, {foreignKey: 'businessId'})
     }
   }
   Employee.init(
