@@ -37,9 +37,13 @@ const getBusinessEmployees = async () => {
 
 const getBusinessAddressAndEmployee = async () => {
   try {
-    //  Find all businesses and include the address and empoyees
-    // The address should come before the employee
-    //  return the result of your query
+    let businesses = await Business.findAll({
+      include: {
+        model: Address,
+        model: Employee
+      }
+    })
+    return businesses
   } catch (error) {
     console.log(error)
   }
