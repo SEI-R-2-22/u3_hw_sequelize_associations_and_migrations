@@ -13,9 +13,11 @@ module.exports = (sequelize, DataTypes) => {
   }
   Business.init(
     {
-      name: DataTypes.STRING
+      id: { 
+        type: DataTypes.STRING,
+        name: DataTypes.STRING,
+        primaryKey: true
     },
-    {
       sequelize,
       modelName: 'Business',
       tableName: 'businesses'
