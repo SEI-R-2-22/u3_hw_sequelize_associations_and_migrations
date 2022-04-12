@@ -2,8 +2,10 @@ const { Business, Address, Employee } = require('./models')
 
 const getAllBusinesses = async () => {
   try {
+    const busi = await Business.findAll()
     //  Should find all businesses
     //  return the result of your query
+    return (busi)
   } catch (error) {
     console.log(error)
   }
@@ -11,6 +13,11 @@ const getAllBusinesses = async () => {
 
 const getBusinessAddress = async () => {
   try {
+    const busi = await Business.findAll({
+      include: { model : Address }
+    })
+    return (busi)
+
     // Should find all businesses and their associated address
     //  return the result of your query
   } catch (error) {
@@ -20,6 +27,11 @@ const getBusinessAddress = async () => {
 
 const getBusinessEmployees = async () => {
   try {
+    const busi = await Business.findAll({
+      include: { model : Employee }
+    })
+    return (busi)
+
     // Should find all businesses with and associated employees
     //  return the result of your query
   } catch (error) {
@@ -29,9 +41,14 @@ const getBusinessEmployees = async () => {
 
 const getBusinessAddressAndEmployee = async () => {
   try {
+    const busi = await Business.findAll({
+      include: [{ model : Address },{ model : Employee }]
+    })
+    return (busi)
+
     //  Find all businesses and include the address and empoyees
     // The address should come before the employee
-    //  return the result of your query
+    //  return the result of your query 
   } catch (error) {
     console.log(error)
   }
