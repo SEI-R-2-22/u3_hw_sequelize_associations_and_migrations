@@ -21,7 +21,7 @@ const getBusinessAddress = async () => {
   try {
     // Should find all businesses and their associated address
     //  return the result of your query
-    const result = await Business.findAll()
+    const result = await Business.findAll({include: Address})
     stringify(result)
     return result
   } catch (error) {
@@ -34,19 +34,27 @@ const getBusinessEmployees = async () => {
   try {
     // Should find all businesses with and associated employees
     //  return the result of your query
+    const result = await Business.findAll({include: Employee})
+    stringify(result)
+    return result
   } catch (error) {
     console.log(error)
   }
+  return result
 }
 
 const getBusinessAddressAndEmployee = async () => {
   try {
-    //  Find all businesses and include the address and empoyees
+    //  Find all businesses and include the address and employees
     // The address should come before the employee
     //  return the result of your query
+    const result = await Business.findAll({ include: [Address, Employee] })
+    stringify(result)
+    return result
   } catch (error) {
     console.log(error)
   }
+  return result
 }
 
 module.exports = {
