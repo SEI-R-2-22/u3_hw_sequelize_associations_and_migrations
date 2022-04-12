@@ -2,6 +2,8 @@ const { Business, Address, Employee } = require('./models')
 
 const getAllBusinesses = async () => {
   try {
+    let businesses = Business.findAll()
+    return businesses
     //  Should find all businesses
     //  return the result of your query
   } catch (error) {
@@ -11,6 +13,12 @@ const getAllBusinesses = async () => {
 
 const getBusinessAddress = async () => {
   try {
+    let businesses = Business.findAll({
+      include: [{
+        model: [Address]
+      }]
+    })
+    return businesses
     // Should find all businesses and their associated address
     //  return the result of your query
   } catch (error) {
