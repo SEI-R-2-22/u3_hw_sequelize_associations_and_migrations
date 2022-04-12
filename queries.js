@@ -3,7 +3,6 @@ const { Business, Address, Employee } = require('./models')
 const getAllBusinesses = async () => {
   try {
     const businesses = await Business.findAll()
-    // stringify(businesses)
     return businesses
   } catch (error) {
     console.log(error)
