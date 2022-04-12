@@ -1,5 +1,7 @@
 {
   "development": {
+    "username": "lawrenceol",
+    "password": "null",
     "database": "associations_hw_development",
     "host": "127.0.0.1",
     "dialect": "postgres"
