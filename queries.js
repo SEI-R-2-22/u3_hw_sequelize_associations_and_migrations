@@ -4,8 +4,6 @@ const getAllBusinesses = async () => {
   try {
     let businesses = await Business.findAll()
     return businesses
-    //  Should find all businesses
-    //  return the result of your query
   } catch (error) {
     console.log(error)
   }
@@ -19,8 +17,6 @@ const getBusinessAddress = async () => {
       }
     })
     return businesses
-    // Should find all businesses and their associated address
-    //  return the result of your query
   } catch (error) {
     console.log(error)
   }
@@ -28,8 +24,12 @@ const getBusinessAddress = async () => {
 
 const getBusinessEmployees = async () => {
   try {
-    // Should find all businesses with and associated employees
-    //  return the result of your query
+    let businesses = await Business.findAll({
+      include: {
+        model: Employee
+      }
+    })
+    return businesses
   } catch (error) {
     console.log(error)
   }
