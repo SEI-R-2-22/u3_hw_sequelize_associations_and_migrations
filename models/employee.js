@@ -15,7 +15,15 @@ module.exports = (sequelize, DataTypes) => {
     {
       firstName: DataTypes.STRING,
       lastName: DataTypes.STRING,
-      email: DataTypes.STRING
+      email: DataTypes.STRING,
+      businessId: {
+        type: DataTypes.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'businesses',
+          key: 'id'
+        }
+      }
     },
     {
       sequelize,
