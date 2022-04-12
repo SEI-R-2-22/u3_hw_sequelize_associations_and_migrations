@@ -10,7 +10,7 @@ module.exports = {
         firstName: falso.randFirstName(),
         lastName: falso.randLastName(),
         email: falso.randEmail(),
-        businessId: b[r].id,
+        businessID: b[r].id,
         createdAt: new Date(),
         updatedAt: new Date()
       }
