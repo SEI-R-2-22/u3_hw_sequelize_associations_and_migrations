@@ -1,7 +1,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.addColumn('addresses','businessId',{
-      type:Sequelize.STRING
+      type:Sequelize.INTEGER
       }
     );
   },
