@@ -12,6 +12,9 @@ module.exports = (sequelize, DataTypes) => {
       Business.hasOne(models.Address, {
         foreignKey: 'businessId'
       })
+      Business.hasMany(models.Employee, {
+        foreignKey: 'businessId'
+      })
     }
   }
   Business.init(
@@ -26,4 +29,3 @@ module.exports = (sequelize, DataTypes) => {
   )
   return Business
 }
-
