@@ -38,10 +38,10 @@ const getBusinessEmployees = async () => {
 const getBusinessAddressAndEmployee = async () => {
   try {
     let businesses = await Business.findAll({
-      include: {
-        model: Address,
-        model: Employee
-      }
+      include: [
+        { model: Address },
+        { model: Employee }
+      ]
     })
     return businesses
   } catch (error) {
