@@ -9,18 +9,25 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Address.belongsTo(models.business);
+      models.business.hasMany(Address)
     }
   }
   Address.init(
     {
+      id: { 
+        type:DataTypes.STRING,
+        primaryKey: true
+      },
       street: DataTypes.STRING,
       city: DataTypes.STRING,
-      state: DataTypes.STRING
+      state: DataTypes.STRING,
+      businessId: DataTypes.STRING
     },
     {
       sequelize,
       modelName: 'Address',
-      tableName: 'addresses'
+      tableName: 'addresses',
     }
   )
   return Address
