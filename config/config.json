@@ -1,16 +1,16 @@
 {
   "development": {
-    "database": "associations_hw_development",
+    "database": "associations_hw_two_development",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
-    "database": "associations_hw_test",
+    "database": "associations_hw_two_test",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
-    "database": "associations_hw_production",
+    "database": "associations_hw_two_production",
     "host": "127.0.0.1",
     "dialect": "postgres"
   }
