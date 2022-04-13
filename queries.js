@@ -38,9 +38,11 @@ const getBusinessEmployees = async () => {
 
 const getBusinessAddressAndEmployee = async () => {
   try {
-    const result = await Business.findOne({
-      where: {}
+    const result = await Business.findAll({
+      include: [Address],
+      include: [Employee]
     })
+    stringify(result)
   } catch (error) {
     console.log(error)
   }
