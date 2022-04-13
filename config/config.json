@@ -2,7 +2,8 @@
   "development": {
     "database": "associations_hw_development",
     "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "password": "V1k281ngs!"
   },
   "test": {
     "database": "associations_hw_test",
